@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import { clerkMiddleware } from "@clerk/express";
-import fileupload from "fileupload";
+import fileupload from "express-fileupload";
 import path from "path";
 
 import userRoutes from "./routes/user.route.js";
@@ -45,3 +45,6 @@ app.listen(PORT || 5000, () => {
   console.log("Server is runnig on port " + PORT);
   connectDB();
 });
+
+
+// ANCHOR Socket io 
