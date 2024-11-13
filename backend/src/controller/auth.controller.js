@@ -1,4 +1,4 @@
-import { User } from "../models/user.model.js";
+import { UserModel } from "../models/user.model.js";
 
 export const authCallback = async (req, res, next) => {
   try {
@@ -6,7 +6,7 @@ export const authCallback = async (req, res, next) => {
 
     const user = await User.findOne({ clerkId: id });
     if (!user) {
-      await User.create({
+      await UserModel.create({
         clerkId: id,
         fullName: `${firstName} ${lastName}`,
         imageUrl,
